@@ -5,22 +5,22 @@
 template<typename T, int size>
 class TStack {
 private:
-    static const int Size = size;
-    T data[Size];
+    static const int KSize = size;
+    T data[KSize];
     int top;
 public:
     TStack() : top(0) {}
     void push(const T &item) {
         if (top <= size - 1)
-            data[top+1] = item;
+            data[top++] = item;
         else
-            throw std::string("Full stack!");
+            throw std::string("Full!");
     }
     T pop() {
         if (top > 0)
             return data[--top];
         else
-            throw std::string("Empty stack!");
+            throw std::string("Empty!");
     }
     bool isEmpty() {
         return top == 0;
@@ -32,5 +32,6 @@ public:
             throw std::string("Empty!");
     }
 };
+
 
 #endif  // INCLUDE_TSTACK_H_

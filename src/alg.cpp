@@ -11,12 +11,12 @@ TStack<int, 100> stack2;
 
 std::string infx2pstfx(std::string inf) {
     std::string s = "";
-    for ( int i = 0; i < inf.length(); i++) {
+    for (int i = 0; i < inf.length(); i++) {
         if (inf[i] >= '0' && inf[i] <= '9') {
             s += inf[i];
             s += ' ';
         } else {
-            if (inf[i] == '(' || stack1.isEmpty() || priority[inf[i]] > priority[stack1.get()]) {
+            if (inf[i] == '(' || stack1.isEmpty() == 1 || priority[inf[i]] > priority[stack1.get()]) {
                 stack1.push(inf[i]);
             } else if (inf[i] == ')') {
                 while (stack1.get() != '(') {
