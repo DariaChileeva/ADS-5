@@ -29,7 +29,7 @@ class TStack {
     }
     T get() {
         if (!isEmpty())
-            return data [top - 1];
+            return data[top - 1];
         else
             throw std::string("Empty!");
     }

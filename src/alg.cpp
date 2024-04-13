@@ -48,7 +48,10 @@ int eval(std::string pref) {
     for (char i : pref) {
         if ((i >= '0' && i <= '9')) {
             sPer += i;
-        } else if (i == '+' || i == '*' || i == '/' || i == '-') {
+        } else if (!sPer.empty() && i == ' ') {
+            stack2.push(std::stoi(sPer));
+            sPer.clear();
+        } else {
             switch (i) {
                 case '+': {
                     cPer = stack2.pop();
